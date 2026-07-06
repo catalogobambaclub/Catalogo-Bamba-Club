@@ -15,6 +15,7 @@
   a{color:inherit}
   header{padding:34px 20px 20px;text-align:center;border-bottom:1px solid var(--line);position:relative}
   .logo-img{height:64px;width:auto;display:block;margin:0 auto;filter:invert(1)}
+  .portada{width:100%;max-height:460px;object-fit:cover;display:block;border-bottom:1px solid var(--line)}
   .brand{font-size:36px;font-weight:900;letter-spacing:6px;text-transform:uppercase;font-family:'Arial Black',Arial,sans-serif}
   .brand span{color:var(--accent)}
   .subtitle{color:var(--muted);margin-top:8px;font-size:13px;letter-spacing:4px;text-transform:uppercase}
@@ -62,12 +63,13 @@
 <body>
 
 <header>
-  <img class="logo-img" src="logo.png" alt="BAMBA CLUB"
-       onerror="this.style.display='none';document.getElementById('brandTxt').style.display='block'">
+  <img class="logo-img" id="logoImg" src="logo.png" alt="BAMBA CLUB" onerror="logoFallback(this)">
   <div class="brand" id="brandTxt" style="display:none">BAMBA<span> ·</span></div>
   <div class="subtitle">Club · Catálogo Mayorista</div>
   <div class="tagline">PRECIOS MAYORISTAS · SUJETO A STOCK DISPONIBLE</div>
 </header>
+
+<img class="portada" id="portada" src="portada.jpg" alt="" onerror="portadaFallback(this)">
 
 <div class="wrap" id="catalogo">
   <p class="empty">Cargando catálogo…</p>
@@ -119,6 +121,22 @@ const EJEMPLO = [
 let PRODUCTOS = [];
 const pedido = [];
 const money = n => "$" + Number(n).toLocaleString("es-AR");
+
+/* --- Logo y portada: prueba varios nombres/mayúsculas --- */
+const LOGO_TRIES = ["logo.png","Logo.png","LOGO.png","logo.PNG","Logo.PNG"];
+let logoIdx = 0;
+function logoFallback(img){
+  logoIdx++;
+  if(logoIdx < LOGO_TRIES.length){ img.src = LOGO_TRIES[logoIdx]; }
+  else{ img.style.display="none"; document.getElementById("brandTxt").style.display="block"; }
+}
+const PORT_TRIES = ["portada.jpg","portada.png","portada.jpeg","Portada.jpg","Portada.png","portada.PNG","portada.JPG"];
+let portIdx = 0;
+function portadaFallback(img){
+  portIdx++;
+  if(portIdx < PORT_TRIES.length){ img.src = PORT_TRIES[portIdx]; }
+  else{ img.style.display="none"; }
+}
 
 async function cargar(){
   try{
