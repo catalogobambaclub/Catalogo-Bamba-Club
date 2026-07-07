@@ -181,13 +181,36 @@ const IMGS = {};      // fotos por producto (para el carrusel)
 const idxMap = {};    // foto actual mostrada por producto
 const money = n => "$" + Number(n).toLocaleString("es-AR");
 
+// Prueba varias extensiones (.jpeg, .jpg, .png...) por si la foto está con otra
+function extCandidates(file){
+  const dot = file.lastIndexOf(".");
+  const base = dot >= 0 ? file.slice(0, dot) : file;
+  const exts = [".jpeg",".jpg",".png",".JPG",".JPEG",".PNG",".webp"];
+  const list = [file];
+  exts.forEach(e=>{ if(!list.includes(base+e)) list.push(base+e); });
+  return list;
+}
+function setImg(el, file){
+  const cands = extCandidates(file);
+  el.dataset.cands = JSON.stringify(cands);
+  el.dataset.ci = "0";
+  el.style.display = "block";
+  el.src = cands[0];
+}
+function imgTry(el){
+  let ci = (parseInt(el.dataset.ci||"0",10)) + 1;
+  let cands = [];
+  try{ cands = JSON.parse(el.dataset.cands||"[]"); }catch(e){}
+  if(ci < cands.length){ el.dataset.ci = ci; el.src = cands[ci]; }
+  else { imgErr(el); }
+}
 function slide(e, gi, dir){
   e.stopPropagation();
   const imgs = IMGS[gi]; if(!imgs || imgs.length < 2) return;
   let i = ((idxMap[gi]||0) + dir + imgs.length) % imgs.length;
   idxMap[gi] = i;
   const im = document.getElementById("img"+gi);
-  if(im){ im.style.display="block"; im.src = imgs[i]; }
+  if(im) setImg(im, imgs[i]);
   const dots = document.getElementById("dots"+gi);
   if(dots) dots.querySelectorAll("i").forEach((d,k)=>d.classList.toggle("on", k===i));
 }
@@ -254,7 +277,8 @@ function render(){
       IMGS[gi] = imgs; idxMap[gi] = 0;
       let phInner;
       if(imgs.length){
-        phInner = `<img id="img${gi}" src="${imgs[0]}" alt="${p.producto}" onerror="imgErr(this)">`;
+        const cands0 = extCandidates(imgs[0]);
+        phInner = `<img id="img${gi}" src="${cands0[0]}" data-cands='${JSON.stringify(cands0)}' data-ci="0" alt="${p.producto}" onerror="imgTry(this)">`;
         if(imgs.length > 1){
           phInner += `<button class="nav prev" onclick="slide(event,${gi},-1)" aria-label="Anterior">‹</button>
                       <button class="nav next" onclick="slide(event,${gi},1)" aria-label="Siguiente">›</button>
