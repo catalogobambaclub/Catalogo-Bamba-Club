@@ -24,16 +24,17 @@ CREWNECK,CREWNECK FORCE,Camuflado,Próximamente,24990,"S,M,L,XL",
 CAMPERA ZIP,CAMPERA SERIF,Negro,NEW IN,42990,"S,M,L,XL,XXL",img/campera-serif-negro.jpg|img/campera-serif-negro-2.jpg|img/campera-serif-negro-3.jpg
 CAMPERA ZIP,CAMPERA SHIELD,Beige,NEW IN,42990,"S,M,L,XL,XXL",img/campera-shield-beige.jpg|img/campera-shield-beige-2.jpg|img/campera-shield-beige-3.jpg|img/campera-shield-beige-4.jpg|img/campera-shield-beige-5.jpg
 CAMPERA ZIP,CAMPERA BADGE,Negro,,42990,"S,M,L,XL,XXL",
-CAMPERA ZIP,CAMPERA TRACE,Negro,,42990,"S,M,L,XL,XXL",
+CAMPERA ZIP,CAMPERA BADGE,Beige,,42990,"S,M,L,XL,XXL",img/campera-badge-beige.jpg|img/campera-badge-beige-2.jpg
+CAMPERA ZIP,CAMPERA TRACE,Negro,,42990,"S,M,L,XL,XXL",img/campera-trace-negro.jpg|img/campera-trace-negro-2.jpg|img/campera-trace-negro-3.jpg
 JEANS,JEAN BAGGY OXID,Celeste,NEW IN,34990,"34,36,38,40,42,44,46,48",img/jean-baggy-oxid-celeste.jpg|img/jean-baggy-oxid-celeste-2.jpg|img/jean-baggy-oxid-celeste-3.jpg
 JEANS,JEAN BAGGY FORCE,Negro,NEW IN,34990,"34,36,38,40,42,44,46,48",img/jean-baggy-force-negro.jpg|img/jean-baggy-force-negro-2.jpg|img/jean-baggy-force-negro-3.jpg|img/jean-baggy-force-negro-4.jpg
 JEANS,JEAN BAGGY SKETCH,Celeste oxido,Próximamente,34990,"34,36,38,40,42,44,46,48",
 JEANS,JEAN BAGGY STAIN,Negro,Próximamente,34990,"34,36,38,40,42,44,46,48",
-JEANS,BAGGY BILLOW,Azul oxido,,32990,"34,36,38,40,42,44,46",
-JEANS,BAGGY BILLOW,Celeste,,32990,"34,36,38,40,42,44,46",
-JEANS,JEAN WIDE OXID,Azul,,39990,"34,36,38,40,42,44,46",
-JEANS,JEAN WIDE OXID,Celeste,,39990,"34,36,38,40,42,44,46",
-BOXERS,BOXERS BMB,Azul,,5990,"S,M,L,XL,XXL",
-BOXERS,BOXERS BMB,Gris,,5990,"S,M,L,XL,XXL",
-BOXERS,BOXERS BMB,Negro,,5990,"S,M,L,XL,XXL",
+JEANS,BAGGY BILLOW,Azul oxido,,32990,"34,36,38,40,42,44,46",img/jean-billow-oxid-azul.jpg|img/jean-billow-oxid-azul-2.jpg|img/jean-billow-oxid-azul-3.jpg|img/jean-billow-oxid-azul-4.jpg
+JEANS,BAGGY BILLOW,Celeste,,32990,"34,36,38,40,42,44,46",img/jean-billow-oxid-celeste.jpg|img/jean-billow-oxid-celeste-2.jpg|img/jean-billow-oxid-celeste-3.jpg|img/jean-billow-oxid-celeste-4.jpg
+JEANS,JEAN WIDE OXID,Azul,,39990,"34,36,38,40,42,44,46",img/jean-wide-oxid-azul.jpg|img/jean-wide-oxid-azul-2.jpg|img/jean-wide-oxid-azul-3.jpg|img/jean-wide-oxid-azul-4.jpg
+JEANS,JEAN WIDE OXID,Celeste,,39990,"34,36,38,40,42,44,46",img/jean-wide-oxid-celeste.jpg|img/jean-wide-oxid-celeste-2.jpg|img/jean-wide-oxid-celeste-3.jpg|img/jean-wide-oxid-celeste-4.jpg|img/jean-wide-oxid-celeste-5.jpg
+BOXERS,BOXERS BMB,Azul,,9990,"S,M,L,XL,XXL",
+BOXERS,BOXERS BMB,Gris,,9990,"S,M,L,XL,XXL",
+BOXERS,BOXERS BMB,Negro,,9990,"S,M,L,XL,XXL",
 ACCESORIOS,BANDOLERA BMB ecocuero,,,11990,,
