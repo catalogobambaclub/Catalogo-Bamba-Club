@@ -312,28 +312,32 @@ function toggleAll(open){
   document.querySelectorAll(".cat-body").forEach(b=>b.classList.toggle("open", open));
 }
 
+// Multi-talle: tocar un talle lo prende/apaga (podés elegir varios)
 function pickSize(el){
-  el.parentNode.querySelectorAll(".sz").forEach(s=>s.classList.remove("active"));
-  el.classList.add("active");
+  el.classList.toggle("active");
 }
 
 function add(i, btn){
   const card = btn.closest(".card");
-  const active = card.querySelector(".sz.active");
   const talles = card.querySelectorAll(".sz");
-  let talle = "Único";
+  let seleccion;
   if(talles.length){
-    if(!active){ alert("Elegí un talle 👕"); return; }
-    talle = active.dataset.talle;
+    const actives = card.querySelectorAll(".sz.active");
+    if(!actives.length){ alert("Elegí uno o más talles 👕"); return; }
+    seleccion = [...actives].map(a=>a.dataset.talle);
+  } else {
+    seleccion = ["Único"];
   }
   const p = PRODUCTOS[i];
-  const key = i+"|"+talle;
-  const found = pedido.find(x=>x.key===key);
-  if(found) found.cant++;
-  else pedido.push({key, nombre:p.producto, color:p.color, talle, precio:p.precio, cant:1});
+  seleccion.forEach(talle=>{
+    const key = i+"|"+talle;
+    const found = pedido.find(x=>x.key===key);
+    if(found) found.cant++;
+    else pedido.push({key, nombre:p.producto, color:p.color, talle, precio:p.precio, cant:1});
+  });
   actualizarBarra();
   refreshCounts();
-  btn.textContent = "✓ Agregado (+1)";
+  btn.textContent = "✓ Agregado (+"+seleccion.length+")";
   setTimeout(()=>btn.textContent="+ Agregar al pedido", 700);
 }
 
