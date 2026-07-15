@@ -62,6 +62,8 @@
   .sizes{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}
   .sz{border:1px solid var(--line);border-radius:8px;padding:4px 9px;font-size:12px;cursor:pointer;background:var(--card2);user-select:none;transition:.15s}
   .sz.active{background:var(--accent);color:var(--accent-txt);border-color:var(--accent);font-weight:700}
+  .sz .cnt{font-weight:800;margin-left:3px;font-size:11px}
+  .sz.has{border-color:var(--accent)}
   .add{margin-top:auto;background:var(--accent);color:var(--accent-txt);border:none;border-radius:10px;padding:10px;font-weight:800;font-size:13px;cursor:pointer;letter-spacing:.5px}
   .add:active{transform:scale(.98)}
 
@@ -291,7 +293,7 @@ function render(){
         <div class="card-body">
           <div class="p-name">${p.producto}${p.color?` · ${p.color}`:""}</div>
           <div class="p-price">${money(p.precio)}</div>
-          <div class="sizes">${talles.map(t=>`<span class="sz" onclick="pickSize(this)">${t}</span>`).join("")||'<span class="noimg">Talle único</span>'}</div>
+          <div class="sizes">${talles.map(t=>`<span class="sz" data-talle="${t}" onclick="pickSize(this)">${t}<b class="cnt"></b></span>`).join("")||'<span class="noimg">Talle único</span>'}</div>
           <button class="add" onclick="add(${gi},this)">+ Agregar al pedido</button>
         </div>
       </div>`;
@@ -322,7 +324,7 @@ function add(i, btn){
   let talle = "Único";
   if(talles.length){
     if(!active){ alert("Elegí un talle 👕"); return; }
-    talle = active.textContent;
+    talle = active.dataset.talle;
   }
   const p = PRODUCTOS[i];
   const key = i+"|"+talle;
@@ -330,8 +332,22 @@ function add(i, btn){
   if(found) found.cant++;
   else pedido.push({key, nombre:p.producto, color:p.color, talle, precio:p.precio, cant:1});
   actualizarBarra();
-  btn.textContent = "✓ Agregado";
-  setTimeout(()=>btn.textContent="+ Agregar al pedido", 900);
+  refreshCounts();
+  btn.textContent = "✓ Agregado (+1)";
+  setTimeout(()=>btn.textContent="+ Agregar al pedido", 700);
+}
+
+// Muestra en cada chip de talle cuántas unidades hay en el pedido
+function refreshCounts(){
+  document.querySelectorAll(".card").forEach(card=>{
+    const gi = card.dataset.i;
+    card.querySelectorAll(".sz").forEach(chip=>{
+      const item = pedido.find(x=>x.key===(gi+"|"+chip.dataset.talle));
+      const cnt = chip.querySelector(".cnt");
+      if(cnt) cnt.textContent = item ? "×"+item.cant : "";
+      chip.classList.toggle("has", !!item);
+    });
+  });
 }
 
 function actualizarBarra(){
@@ -363,7 +379,7 @@ function renderLineas(){
   const tot = pedido.reduce((s,x)=>s+x.cant*x.precio,0);
   document.getElementById("modalTotal").textContent = money(tot);
 }
-function quitar(idx){ pedido.splice(idx,1); actualizarBarra(); renderLineas(); }
+function quitar(idx){ pedido.splice(idx,1); actualizarBarra(); renderLineas(); refreshCounts(); }
 
 function descargarPlanilla(){
   const nombre = document.getElementById("fNombre").value.trim();
