@@ -83,6 +83,8 @@
   .line small{color:var(--muted);display:block;font-size:12px}
   .line .rm{color:#d33;cursor:pointer;font-size:12px;border:none;background:none}
   .tot{display:flex;justify-content:space-between;padding:14px 0 4px;font-size:18px;font-weight:800}
+  .vaciar{background:transparent;border:none;color:#d33;font-size:12px;font-weight:700;cursor:pointer;padding:6px 0;margin-top:2px}
+  .vaciar:hover{text-decoration:underline}
   .form label{display:block;font-size:12px;color:var(--muted);margin:10px 0 4px}
   .form input,.form textarea{width:100%;background:#fafafa;border:1px solid var(--line);border-radius:8px;padding:10px;color:var(--txt);font-size:14px;font-family:inherit}
   .actions{display:flex;gap:10px;margin-top:16px}
@@ -92,6 +94,7 @@
   .empty{color:var(--muted);text-align:center;padding:30px 0}
   footer{text-align:center;color:var(--muted);font-size:11px;padding:26px 16px;letter-spacing:1px}
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 <body>
 
@@ -124,6 +127,7 @@
     <h2>Tu pedido</h2>
     <div id="lineas"></div>
     <div class="tot"><span>Total</span><span id="modalTotal">$0</span></div>
+    <button class="vaciar" onclick="vaciarPedido()">🗑 Vaciar pedido</button>
     <div class="form">
       <label>Nombre / Empresa *</label>
       <input id="fNombre" placeholder="Tu nombre o local">
@@ -385,6 +389,13 @@ function renderLineas(){
 }
 function quitar(idx){ pedido.splice(idx,1); actualizarBarra(); renderLineas(); refreshCounts(); }
 
+function vaciarPedido(){
+  if(!pedido.length) return;
+  if(!confirm("¿Vaciar todo el pedido?")) return;
+  pedido.length = 0;
+  actualizarBarra(); renderLineas(); refreshCounts();
+}
+
 function descargarPlanilla(){
   const nombre = document.getElementById("fNombre").value.trim();
   const tel = document.getElementById("fTel").value.trim();
@@ -393,25 +404,41 @@ function descargarPlanilla(){
   const mail = document.getElementById("fMail").value.trim();
   const notas = document.getElementById("fNotas").value.trim().replace(/\n/g," ");
   const fecha = new Date().toLocaleString("es-AR");
+  const safe = nombre.replace(/[^a-z0-9]/gi,"_");
+  let tot = 0;
 
+  // Excel real (.xlsx) con SheetJS
+  if(typeof XLSX !== "undefined"){
+    const rows = [
+      ["PEDIDO MAYORISTA - BAMBA CLUB"],
+      ["Fecha", fecha],
+      ["Cliente", nombre],
+      ["Telefono", tel],
+      ["Email", mail],
+      ["Notas", notas],
+      [],
+      ["Producto","Color","Talle","Cantidad","Precio unit","Subtotal"]
+    ];
+    pedido.forEach(x=>{ const sub=x.precio*x.cant; tot+=sub; rows.push([x.nombre, x.color, x.talle, x.cant, x.precio, sub]); });
+    rows.push(["","","","","TOTAL", tot]);
+    const ws = XLSX.utils.aoa_to_sheet(rows);
+    ws["!cols"] = [{wch:32},{wch:12},{wch:8},{wch:9},{wch:11},{wch:11}];
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Pedido");
+    XLSX.writeFile(wb, "Pedido_"+safe+".xlsx");
+    alert("✓ ¡Listo! Se descargó tu pedido en Excel. Envíanoslo para confirmarlo.");
+    return;
+  }
+
+  // Respaldo CSV (si no cargó la librería)
   let csv = "PEDIDO MAYORISTA - BAMBA CLUB\n";
-  csv += `Fecha,${fecha}\n`;
-  csv += `Cliente,${esc(nombre)}\n`;
-  csv += `Telefono,${esc(tel)}\n`;
-  csv += `Email,${esc(mail)}\n`;
-  csv += `Notas,${esc(notas)}\n\n`;
+  csv += `Fecha,${fecha}\nCliente,${esc(nombre)}\nTelefono,${esc(tel)}\nEmail,${esc(mail)}\nNotas,${esc(notas)}\n\n`;
   csv += "Producto,Color,Talle,Cantidad,Precio unit,Subtotal\n";
-  let tot=0;
-  pedido.forEach(x=>{
-    const sub=x.precio*x.cant; tot+=sub;
-    csv += `${esc(x.nombre)},${esc(x.color)},${x.talle},${x.cant},${x.precio},${sub}\n`;
-  });
+  pedido.forEach(x=>{ const sub=x.precio*x.cant; tot+=sub; csv += `${esc(x.nombre)},${esc(x.color)},${x.talle},${x.cant},${x.precio},${sub}\n`; });
   csv += `,,,,TOTAL,${tot}\n`;
-
   const blob = new Blob(["﻿"+csv], {type:"text/csv;charset=utf-8;"});
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
-  const safe = nombre.replace(/[^a-z0-9]/gi,"_");
   a.href=url; a.download=`Pedido_${safe}.csv`;
   document.body.appendChild(a); a.click(); a.remove();
   URL.revokeObjectURL(url);
