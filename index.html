@@ -50,6 +50,7 @@
   .card:hover .ph img{transform:scale(1.04)}
   .ph .noimg{color:#bbb;font-size:12px;letter-spacing:1px}
   .badge{position:absolute;top:8px;left:8px;background:var(--blue);color:#fff;font-size:10px;font-weight:800;letter-spacing:1px;padding:4px 8px;border-radius:6px;text-transform:uppercase;z-index:2}
+  .badge.agotado{background:#e51c1c}
   .ph .nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.85);border:1px solid var(--line);color:#0f0f0f;width:28px;height:28px;border-radius:50%;font-size:18px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;z-index:2}
   .ph .nav.prev{left:6px} .ph .nav.next{right:6px}
   .ph .nav:hover{background:#fff}
@@ -293,7 +294,7 @@ function render(){
       } else { phInner = `<span class="noimg">SIN FOTO</span>`; }
       html += `
       <div class="card" data-i="${gi}">
-        <div class="ph">${phInner}${p.etiqueta?`<span class="badge">${p.etiqueta}</span>`:""}</div>
+        <div class="ph">${phInner}${p.etiqueta?`<span class="badge${p.etiqueta.toUpperCase()==="AGOTADO"?" agotado":""}">${p.etiqueta}</span>`:""}</div>
         <div class="card-body">
           <div class="p-name">${p.producto}${p.color?` · ${p.color}`:""}</div>
           <div class="p-price">${money(p.precio)}</div>
