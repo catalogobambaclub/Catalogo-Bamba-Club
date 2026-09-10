@@ -1,10 +1,10 @@
 categoria,producto,color,etiqueta,precio,talles,imagen
-REMERA BOXY,REMERA BOXY VARSITY,Negro,NEW IN,15990,"S,M,L,XL",img/remera-boxy-varsity-negro.jpg|img/
-REMERA BOXY,REMERA BOXY VARSITY,Dry rose,NEW IN,15990,"S,M,L,XL",
-REMERA BOXY,REMERA BOXY NEW RECORD,Rosa claro,NEW IN,15990,"S,M,L,XL",
-REMERA BOXY,REMERA BOXY NEW RECORD,Gris,NEW IN,15990,"S,M,L,XL",
-REMERA BOXY,REMERA BOXY HEADPHONE,Negro,NEW IN,15990,"S,M,L,XL",
-REMERA BOXY,REMERA BOXY HEADPHONE,Dry Rose,NEW IN,15990,"S,M,L,XL",
+REMERA BOXY,REMERA BOXY VARSITY,Negro,NEW IN,15990,"S,M,L,XL",img/remera-boxy-varsity-negro.jpg
+REMERA BOXY,REMERA BOXY VARSITY,Dry rose,NEW IN,15990,"S,M,L,XL",img/remera-boxy-varsity-dryrose-1.jpg|img/remera-boxy-varsity-dryrose-2.jpg
+REMERA BOXY,REMERA BOXY NEW RECORD,Rosa claro,NEW IN,15990,"S,M,L,XL",img/remera-boxy-newrecord-rosa-1.jpg|img/remera-boxy-newrecord-rosa-2.jpg
+REMERA BOXY,REMERA BOXY NEW RECORD,Gris,NEW IN,15990,"S,M,L,XL",img/remera-boxy-new-record-gris.JPG
+REMERA BOXY,REMERA BOXY HEADPHONE,Negro,NEW IN,15990,"S,M,L,XL",img/remera-boxy-headphone-negro-1.jpg|img/remera-boxy-headphone-negro-2.jpg|img/remera-boxy-headphone-negro-3.jpg
+REMERA BOXY,REMERA BOXY HEADPHONE,Dry Rose,NEW IN,15990,"S,M,L,XL",img/remera-boxy-headphone-dryrose-1.jpg|img/remera-boxy-headphone-dryrose-2.jpg
 REMERA BOXY,REMERA BOXY VISION,Blanco,AGOTADO,14990,"S,M,L,XL,XXL",img/remera-boxy-vision-blanco.jpg|img/remera-boxy-vision-blanco-2.jpg|img/remera-boxy-vision-blanco-3.jpg
 REMERA BOXY,REMERA BOXY SCRIPT,Negro,AGOTADO,14990,"S,M,L,XL,XXL",img/remera-boxy-script-negro.jpg|img/remera-boxy-script-negro-2.jpg|img/remera-boxy-script-negro-3.jpg
 REMERA BOXY,REMERA BOXY PLAYER,Negro,AGOTADO,14990,"S,M,L,XL,XXL",img/remera-boxy-player-negro.jpg|img/remera-boxy-player-negro-2%20.jpg|img/remera-boxy-player-negro-3.jpg
@@ -12,29 +12,29 @@ REMERA BOXY,REMERA BOXY PLAYER,Bordo,AGOTADO,14990,"S,M,L,XL,XXL",img/remera-box
 REMERA BOXY,REMERA BOXY PROPERTY,Negro,AGOTADO,14990,"S,M,L,XL,XXL",img/remera-boxy-property-negro.jpg|img/remera-boxy-property-negro-2.jpg|img/remera-boxy-property-negro-3.jpg
 REMERA BOXY ACROSS,REMERA RECORD,Gris,NEW IN,15990,"S,M,L,XL",
 REMERA BOXY ACROSS,REMERA SCRIP,Gris,NEW IN,15990,"S,M,L,XL",
-REMERA BOXY ACROSS,REMERA GOTIC,Negro,NEW IN,15990,"S,M,L,XL",
-REMERA BOXY ACROSS,REMERA GOTIC,Gris,NEW IN,15990,"S,M,L,XL",
-REMERA BOXY ACROSS,REMERA CONCRETE,Negro,NEW IN,15990,"S,M,L,XL",
-REMERA BOXY ACROSS,REMERA CONCRETE,Gris,NEW IN,15990,"S,M,L,XL",
-REMERA MANGA LARGA,REMERA DUAL GALLERY DEPT,Celeste,NEW IN,18990,"S,M,L,XL",
-REMERA MANGA LARGA,REMERA DUAL GALLERY DEPT,Gris,NEW IN,18990,"S,M,L,XL",
-REMERA MANGA LARGA,REMERA DUAL 526,Celeste,NEW IN,18990,"S,M,L,XL",
-REMERA MANGA LARGA,REMERA DUAL 526,Gris,NEW IN,18990,"S,M,L,XL",
-REMERA MANGA LARGA,REMERA LONGLEEVE SHIELD,Crema,NEW IN,17490,"S,M,L,XL",
-REMERA MANGA LARGA,REMERA LONGLEEVE GLORY,Negro,NEW IN,17490,"S,M,L,XL",
-REMERA MANGA LARGA,REMERA LONGLEEVE PROPERTY,Chocolate,,17490,"S,M,L,XL",
-REMERA MANGA LARGA,REMERA LONGLEEVE PROPERTY,Negro,,17490,"S,M,L,XL",
+REMERA BOXY ACROSS,REMERA GOTIC,Negro,NEW IN,15990,"S,M,L,XL",img/remera-gotic-negro-1.jpg
+REMERA BOXY ACROSS,REMERA GOTIC,Gris,NEW IN,15990,"S,M,L,XL",img/remera-gotic-gris-1.jpg|img/remera-gotic-gris-2.jpg
+REMERA BOXY ACROSS,REMERA CONCRETE,Negro,NEW IN,15990,"S,M,L,XL",img/remera-concrete-negro-1.jpg
+REMERA BOXY ACROSS,REMERA CONCRETE,Gris,NEW IN,15990,"S,M,L,XL",img/remera-concrete-gris-1.jpg|img/remera-concrete-gris-2.jpg
+REMERA MANGA LARGA,REMERA DUAL GALLERY DEPT,Celeste,NEW IN,18990,"S,M,L,XL",img/remera-dual-gallery-dept-celeste-1.jpg|img/remera-dual-gallery-dept-celeste-2.jpg|img/remera-dual-gallery-dept-celeste-3.jpg
+REMERA MANGA LARGA,REMERA DUAL GALLERY DEPT,Gris,NEW IN,18990,"S,M,L,XL",img/remera-dual-gallery-dept-gris-1.jpg|img/remera-dual-gallery-dept-gris-2.jpg|img/remera-dual-gallery-dept-gris-3.jpg
+REMERA MANGA LARGA,REMERA DUAL 526,Celeste,NEW IN,18990,"S,M,L,XL",img/remera-dual-dept-526-celeste-1.jpg|img/remera-dual-dept-526-celeste-2.jpg|img/remera-dual-dept-526-celeste-3.jpg
+REMERA MANGA LARGA,REMERA DUAL 526,Gris,NEW IN,18990,"S,M,L,XL",img/remera-dual-dept-526-gris-1.jpg
+REMERA MANGA LARGA,REMERA LONGLEEVE SHIELD,Crema,NEW IN,17490,"S,M,L,XL",img/longleeve-shield-crema.jpg|img/longleeve-shield-crema-2.jpg|img/longleeve-shield-crema-3.jpg
+REMERA MANGA LARGA,REMERA LONGLEEVE GLORY,Negro,NEW IN,17490,"S,M,L,XL",img/longleeve-glory-negro.jpg|img/longleeve-glory-negro-2.jpg|img/longleeve-glory-negro-3.jpg
+REMERA MANGA LARGA,REMERA LONGLEEVE PROPERTY,Chocolate,,17490,"S,M,L,XL",img/longleeve-property-chocolate.jpg|img/longleeve-property-chocolate-2.jpg
+REMERA MANGA LARGA,REMERA LONGLEEVE PROPERTY,Negro,,17490,"S,M,L,XL",img/longleeve-property-negro.jpg|img/longleeve-property-negro-2.jpg|img/longleeve-property-negro-3.jpg|img/longleeve-property-negro-4.jpg
 REMERA MANGA LARGA,REMERA DUAL,Crema,AGOTADO,17490,"S,M,L,XL",img/remera-dual-crema.jpg|img/remera-dual-crema-2.jpg|img/remera-dual-crema-3.jpg|img/remera-dual-crema-4.jpg
 REMERA MANGA LARGA,REMERA DUAL,Negro,AGOTADO,17490,"S,M,L,XL",img/remera-dual-negro.jpg|img/remera-dual-negro-2.jpg|img/remera-dual-negro-3.jpg
 REMERA MANGA LARGA,REMERA DUAL SCRIPT,Negro,AGOTADO,15990,"S,M,L,XL",img/remera-dualscript-negro.jpg|img/remera-dualscript-negro-2.jpg|img/remera-dualscript-negro-3.jpg
 REMERA MANGA LARGA,REMERA DUAL SCRIPT,Crema,AGOTADO,15990,"S,M,L,XL",img/remera-dualscript-crema.jpg|img/remera-dualscript-crema-2.jpg|img/remera-dualscript-crema-3.jpg
-CREWNECK,DOUBLE FACED CREWNECK,Azul,PrÃ³ximamente,29990,"S,M,L,XL",
-CREWNECK,DOUBLE FACED CREWNECK,Gris,PrÃ³ximamente,29990,"S,M,L,XL",
-CREWNECK,CREWNECK FORCE,Camuflado,AGOTADO,24990,"S,M,L,XL",
-CONJUNTO VARSITY,CAMPERA VARSITY WASH,Gris,PrÃ³ximamente,42990,"S,M,L,XL",
-CONJUNTO VARSITY,BERMUDA VARSITY WASH,Gris,PrÃ³ximamente,32990,"S,M,L,XL",
-CONJUNTO VARSITY,CAMPERA VARSITY BLACK,Negro,PrÃ³ximamente,39990,"S,M,L,XL",
-CONJUNTO VARSITY,BERMUDA VARSITY BLACK,Negro,PrÃ³ximamente,29990,"S,M,L,XL",
+CREWNECK,DOUBLE FACED CREWNECK,Azul,Próximamente,29990,"S,M,L,XL",
+CREWNECK,DOUBLE FACED CREWNECK,Gris,Próximamente,29990,"S,M,L,XL",
+CREWNECK,CREWNECK FORCE,Camuflado,AGOTADO,24990,"S,M,L,XL",img/crewneck-force-militar-1.jpg|img/crewneck-force-militar-2.jpg
+CONJUNTO VARSITY,CAMPERA VARSITY WASH,Gris,Próximamente,42990,"S,M,L,XL",
+CONJUNTO VARSITY,BERMUDA VARSITY WASH,Gris,Próximamente,32990,"S,M,L,XL",
+CONJUNTO VARSITY,CAMPERA VARSITY BLACK,Negro,Próximamente,39990,"S,M,L,XL",
+CONJUNTO VARSITY,BERMUDA VARSITY BLACK,Negro,Próximamente,29990,"S,M,L,XL",
 CAMPERA ZIP,CAMPERA HONORS,Celeste,NEW IN,39990,"S,M,L,XL",img/campera-honors-celeste.jpg|img/campera-honors-celeste-2.jpg
 CAMPERA ZIP,CAMPERA HONORS,Gris,NEW IN,39990,"S,M,L,XL",img/campera-honors-gris.jpg|img/campera-honors-gris-2.jpg
 CAMPERA ZIP,CAMPERA SERIF,Negro,AGOTADO,42990,"S,M,L,XL,XXL",img/campera-serif-negro.jpg|img/campera-serif-negro-2.jpg|img/campera-serif-negro-3.jpg
@@ -44,7 +44,7 @@ CAMPERA ZIP,CAMPERA BADGE,Beige,AGOTADO,42990,"S,M,L,XL,XXL",img/campera-badge-b
 CAMPERA ZIP,CAMPERA TRACE,Negro,AGOTADO,42990,"S,M,L,XL,XXL",img/campera-trace-negro.jpg|img/campera-trace-negro-2.jpg|img/campera-trace-negro-3.jpg
 JEANS,JEAN BAGGY BLUE OXID,Celeste,NEW IN,34990,"38,40,42,44,46,48",
 JEANS,JEAN BAGGY BLUE GREY,Celeste,NEW IN,34990,"38,40,42,44,46,48",
-JEANS,JEAN BAGGY SKETCH,Celeste oxido,AGOTADO,34990,"38,40,42,44,46,48",
+JEANS,JEAN BAGGY SKETCH,Celeste oxido,AGOTADO,34990,"38,40,42,44,46,48",img/jean-baggy-sketch-celeste.jpg|img/jean-baggy-sketch-celeste-2.jpg|img/jean-baggy-sketch-celeste-3.jpg|img/jean-baggy-sketch-celeste-4.jpg
 JEANS,JEAN BAGGY STAIN,Negro,AGOTADO,34990,"38,40,42,44,46,48",
 JEANS,BAGGY BILLOW,Azul oxido,AGOTADO,32990,"34,36,38,40,42,44,46",img/jean-billow-oxid-azul.jpg|img/jean-billow-oxid-azul-2.jpg|img/jean-billow-oxid-azul-3.jpg|img/jean-billow-oxid-azul-4.jpg
 JEANS,BAGGY BILLOW,Celeste,AGOTADO,32990,"34,36,38,40,42,44,46",img/jean-billow-oxid-celeste.jpg|img/jean-billow-oxid-celeste-2.jpg|img/jean-billow-oxid-celeste-3.jpg|img/jean-billow-oxid-celeste-4.jpg
@@ -54,4 +54,3 @@ BOXERS,BOXERS BMB,Azul,,9990,"S,M,L,XL,XXL",img/boxer-azul.png
 BOXERS,BOXERS BMB,Gris,,9990,"S,M,L,XL,XXL",img/boxer-gris.png
 BOXERS,BOXERS BMB,Negro,,9990,"S,M,L,XL,XXL",img/boxer-negro.png
 ACCESORIOS,BANDOLERA BMB ecocuero,,,11990,,img/bandolera-bamba.png
-
